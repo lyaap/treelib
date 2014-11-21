@@ -6,7 +6,7 @@ from treelib import __version__
 setup(
     name = "treelib",
     version = __version__,
-    url = 'https://github.com/caesar0301/pyTree',
+    url = 'https://github.com/lyaap/treelib',
     author = 'caesar0301',
     author_email = 'chenxm35@gmail.com',
     description = 'A Python 2/3 implementation of tree structure.',
