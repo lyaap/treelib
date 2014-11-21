@@ -8,10 +8,8 @@ from __future__ import print_function
 from __future__ import unicode_literals
 import json
 from copy import deepcopy
-try:
-    from .node import Node
-except:
-    from node import Node
+
+from treelib.node import Node
 
 __author__ = 'chenxm'
 
@@ -640,6 +638,13 @@ class Tree(object):
         for node_n in self.expand_tree(nid):
             st._nodes.update({self[node_n].identifier: self[node_n]})
         return st
+
+    def set_selected(self, nid):
+        self._selected = node = self.get_node(nid)
+        while not node.is_root():
+            attr_name = 'selected' if node.identifier == nid else 'sibling'
+            setattr(node, attr_name, True)
+            node = self.parent(node.identifier)
 
     def to_json(self, with_data=False):
         """Return the json string corresponding to self"""

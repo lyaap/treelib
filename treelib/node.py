@@ -38,6 +38,10 @@ class Node(object):
         #: identifier(s) of the soons' node(s) :
         self._fpointer = list()
 
+        # Selected node
+        self.selected = False
+        self.sibling = False
+
         #: None or whatever given as a parameter
         self.data = data
 

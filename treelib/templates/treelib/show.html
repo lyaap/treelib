@@ -1,0 +1,12 @@
+{% load treelib %}
+
+{% for node in nodes %}
+    <li>
+        {{ node.tag }}
+        {% if not node.is_leaf %}
+            <ul>
+                {% show_tree tree node template %}
+            </ul>
+        {% endif %}
+    </li>
+{% endfor %}
